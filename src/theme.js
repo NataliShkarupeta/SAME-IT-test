@@ -20,9 +20,10 @@ export const theme = {
   colors: {
     text: '#000000',
     background: '#4B0082',
-    accent: '#FFE4B5',
-    primary: '',
-    secondary: '#9370DB',
+    // accent: '#FFE4B5',
+    primary: '#ffffff',
+    accent: '#9370DB',
+    // secondary: '#9370DB',
     muted: 'transparent',
     modes: {
       dark: {

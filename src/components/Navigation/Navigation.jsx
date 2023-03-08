@@ -1,10 +1,14 @@
-import { NavigationLink, Wrap } from './Navigation.styled';
+import { Outlet } from 'react-router-dom';
+import { NavigationLink, Wrap, PositionBlocks } from './Navigation.styled';
 
 export const Navigation = () => {
   return (
-    <Wrap>
-      <NavigationLink to="/"> Перевірити ТТН</NavigationLink>
-      <NavigationLink to="/branches"> Список відділень </NavigationLink>
-    </Wrap>
+    <PositionBlocks>
+      <Wrap>
+        <NavigationLink to="/"> Перевірити ТТН</NavigationLink>
+        <NavigationLink to="/branches"> Список відділень </NavigationLink>
+      </Wrap>
+      <Outlet />
+    </PositionBlocks>
   );
 };
