@@ -1,6 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 // import { persistReducer } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
+import pointsSlice from './points/pointsSlice';
 
 // const persistConfig = {
 //   key: 'user',
@@ -9,5 +10,5 @@ import { combineReducers } from '@reduxjs/toolkit';
 // };
 
 export const reducer = combineReducers({
-//   user: persistReducer(persistConfig),
+  points: pointsSlice,
 });
