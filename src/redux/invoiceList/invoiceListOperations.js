@@ -4,20 +4,22 @@ const API__KEY = '01fd7ec6f6b3fdecb11b0163020681c2';
 const URL = 'https://api.novaposhta.ua/v2.0/json/';
 // axios.defaults.baseURL = 'https://api.novaposhta.ua/v2.0/json/';
 
-export const fetchAllPoints = createAsyncThunk(
-  'points/fetchAll',
+export const fetchInvoiceList = createAsyncThunk(
+  'invoiceList/fetchAll',
   async (_, { rejectWithValue }) => {
     const request = {
       apiKey: API__KEY,
-      modelName: 'Address',
-      calledMethod: 'getWarehouses',
+      modelName: 'InternetDocument',
+      calledMethod: 'getDocumentList',
       methodProperties: {
-        CityName: 'Київ',
-        Limit: '50',
+        DateTimeFrom: '01.01.2021',
+        // DateTimeTo: 'дд.мм.рррр',
         Page: '1',
+        GetFullList: '1',
+        // DateTime: 'дд.мм.рррр',
       },
     };
-    //  console.log('1', 1);
+    
 
     try {
       const response = await fetch(URL, {
@@ -33,8 +35,15 @@ export const fetchAllPoints = createAsyncThunk(
         referrerPolicy: 'no-referrer', // no-referrer, *client
         body: JSON.stringify(request), // body data type must match "Content-Type" header
       });
-        const data = await response.json();
-    //   console.log('data fetch', data.data);
+      //  .then(response => {
+      //       return response.json();
+      //     })
+      //     .then(data => {
+      //       console.log('data fetch', data.data[0]);
+      //       return data.data[0];
+      //     });
+      const data = await response.json();
+      console.log('data ', data.data);
       return data.data;
     } catch (error) {
       return rejectWithValue(error.message);

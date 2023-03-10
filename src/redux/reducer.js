@@ -1,14 +1,24 @@
 import { combineReducers } from '@reduxjs/toolkit';
-// import { persistReducer } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
-import pointsSlice from './points/pointsSlice';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import pointsReduser from './points/pointsSlice';
+import ordersReduser from './orders/ordersSlice'
+import invoiceListReduser from './invoiceList/invoiceListSlice'
 
-// const persistConfig = {
-//   key: 'user',
-//   storage,
-//   whitelist: ['token'],
-// };
+const persistConfig = {
+  key: 'invoiceList',
+  storage,
+  whitelist: ['list'],
+};
 
 export const reducer = combineReducers({
-  points: pointsSlice,
+  points: pointsReduser,
+  orders: ordersReduser,
+  invoiceList: persistReducer(persistConfig, invoiceListReduser),
+ 
 });
+
+// export const reducer = combineReducers({
+//   points: pointsReduser,
+//   orders: ordersReduser,
+// });
