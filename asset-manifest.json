@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/SAME-IT-test/static/js/main.38c2c502.js",
+    "main.js": "/SAME-IT-test/static/js/main.36afcc0f.js",
     "index.html": "/SAME-IT-test/index.html",
-    "main.38c2c502.js.map": "/SAME-IT-test/static/js/main.38c2c502.js.map"
+    "main.36afcc0f.js.map": "/SAME-IT-test/static/js/main.36afcc0f.js.map"
   },
   "entrypoints": [
-    "static/js/main.38c2c502.js"
+    "static/js/main.36afcc0f.js"
   ]
 }
