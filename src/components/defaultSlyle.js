@@ -1,6 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import img from '../images/box.jpg';
-
 
 export const BasicWrap = styled.div`
   box-sizing: border-box;

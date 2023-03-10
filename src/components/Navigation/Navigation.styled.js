@@ -20,25 +20,36 @@ export const Wrap = styled.nav`
   margin-top: ${p => p.theme.space[4]}px;
   margin-right: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[4]}px;
-  width: 300px;
-  /* width: ${p => p.theme.sizes[8]}px; */
+
   display: flex;
   flex-direction: column;
   gap: 40px;
   box-shadow: 0px 1px 20px rgba(90, 9, 100, 0.226972);
+ 
+  @media screen and (min-width: 721px) {
+    width: 200px;
+  }
+  @media screen and (min-width: 960px) {
+    width: 300px;
+  }
 `;
 
 export const PositionBlocks = styled.div`
-  margin-left: ${p => p.theme.space[5]}px;
+  
   display: flex;
   margin-top: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[4]}px;
-  @media screen and (${p => p.theme.media.small}) {
-    flex-direction: column;
-    padding: ${p => p.theme.space[2]}px;
-  }
+
   @media screen and (${p => p.theme.media.medium}) {
     flex-direction: column;
-    padding: ${p => p.theme.space[3]}px;
+    margin: ${p => p.theme.space[0]}px;
+    padding: ${p => p.theme.space[4]}px;
+  }
+  @media screen and (min-width: 721px) {
+    margin-left: ${p => p.theme.space[0]}px;
+  }
+  @media screen and (min-width: 960px) {
+   margin-left: ${p => p.theme.space[5]}px;
+   
   }
 `;

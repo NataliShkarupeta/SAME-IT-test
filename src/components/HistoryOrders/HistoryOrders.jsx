@@ -1,4 +1,10 @@
-import { Wrap, TakeHistory, CircleButton, Li } from './HistoryOrders.styled';
+import {
+  Wrap,
+  TakeHistory,
+  CircleButton,
+  Li,
+  Ul,
+} from './HistoryOrders.styled';
 import { selectInvoiceList } from 'redux/invoiceList/invoiceListSelectors';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -23,7 +29,7 @@ export const HistoryOrders = () => {
         Отримати номери всіх ТТН в цьому році
       </TakeHistory>
       <p>Історія :</p>
-      <ul>
+      <Ul>
         {' '}
         {invoiceList.map(({ IntDocNumber, Ref }) => (
           <>
@@ -38,7 +44,7 @@ export const HistoryOrders = () => {
             </Li>
           </>
         ))}
-      </ul>
+      </Ul>
     </Wrap>
   );
 };

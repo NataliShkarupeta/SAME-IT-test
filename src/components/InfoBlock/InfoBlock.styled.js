@@ -9,14 +9,27 @@ import styled from 'styled-components';
    background-color: ${p => p.theme.colors.primary};
    border: ${p => p.theme.borders.normal};
    border-radius: ${p => p.theme.radii.normal};
-   opacity: 0.80;
-   `
+   opacity: 0.8;
+   overflow-y: scroll;
+   @media screen and (${p => p.theme.media.medium}) {
+     margin: ${p => p.theme.space[0]}px;
+     width: 100%;
+     height: 170px;
+   }
+ `;
  
  export const Span=styled.span`
  text-decoration: underline;
  `
  export const P = styled.p`
    font-family: ${p => p.theme.fonts.heading};
-   font-size: ${p => p.theme.fontSizes[3]}px;
+
    font-weight: ${p => p.theme.bold};
+   @media screen and (${p => p.theme.media.large}) {
+     font-size: ${p => p.theme.fontSizes[1]}px;
+   }
+ 
+   @media screen and (min-width: 1200px) {
+     font-size: ${p => p.theme.fontSizes[3]}px;
+   }
  `;
