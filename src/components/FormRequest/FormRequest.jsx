@@ -3,11 +3,14 @@ import { useDispatch } from 'react-redux';
 import { fetchLocationOrder } from 'redux/orders/ordersOperations';
 import { useState } from 'react';
 
+
 export const FormRequest = () => {
   const [num, setNut] = useState('');
 
+ 
+
   const dispatch = useDispatch();
-  console.log(num);
+
 
   const takeInputValue = ({ target }) => {
     setNut(target.value);

@@ -1,4 +1,4 @@
-import { Wrap } from './InfoBlock.styled';
+import { Wrap, Span, P } from './InfoBlock.styled';
 import { selectOders } from 'redux/orders/ordersSelectors';
 import { useSelector } from 'react-redux';
 
@@ -8,9 +8,12 @@ export const InfoBlock = () => {
  
   return (
     <Wrap>
-      <p>Статус доставки: {order && order.Status}</p>
-      <p>Відправлено: {order && order.WarehouseSender}</p>
-      <p>Отримано: {order && order.WarehouseRecipient}</p>
+      <P>
+        Номер ТТН: <Span>{order && order.Number}</Span>
+      </P>
+      <P>Статус доставки: {order && order.Status}</P>
+      <P>Відправлено: {order && order.WarehouseRecipientAddress}</P>
+      <P>Отримано: {order && order.WarehouseSenderAddress}</P>
     </Wrap>
   );
 };

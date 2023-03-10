@@ -1,5 +1,10 @@
 export const theme = {
-  breakpoints: [[40, 52, 64].map(n => n + 'em')],
+  media: {
+    extraLarge: '(max-width: 1140px)',
+    large: '(max-width: 960px)',
+    medium: '(max-width: 720px)',
+    small: '(max-width: 540px)',
+  },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'Noto Serif, sans-serif',
@@ -22,8 +27,8 @@ export const theme = {
     background: '#4B0082',
     // accent: '#FFE4B5',
     primary: '#ffffff',
-    accent: '#9370DB',
-    // secondary: '#9370DB',
+    accent: '#600398',
+    secondary: '#b00cc8',
     muted: 'transparent',
     modes: {
       dark: {
