@@ -7,6 +7,7 @@ export const BasicWrap = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   
 `;
+

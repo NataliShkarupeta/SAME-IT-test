@@ -9,7 +9,7 @@ import {
 import { selectPoints } from 'redux/points/pointsSelectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { Input } from 'components/FormRequest/FormRequest.styled';
-import { useRef, useState } from 'react';
+import {  useRef, useState } from 'react';
 import { Button } from 'components/FormRequest/FormRequest.styled';
 import { fetchAllPoints } from 'redux/points/pointsOperations';
 import { resetPoints } from 'redux/points/pointsSlice';
@@ -20,36 +20,44 @@ import { Rings } from 'react-loader-spinner';
 // FaRegSmileWink;
 // FaRegFrown;
 
-
 export const ListPoints = () => {
   const [city, setCity] = useState('');
   const [page, setPage] = useState(1);
 
   const timerDebounceRef = useRef();
+  
+  // const takeCity = ({target}) => {
+  //  const nameCity = target.value.trim();
+  //   if (timerDebounceRef.current) {
+  //     clearTimeout(timerDebounceRef.current);
+  //   }
 
-  const takeCity = ({target}) => {
-   const nameCity = target.value;
-    if (timerDebounceRef.current) {
-      clearTimeout(timerDebounceRef.current);
+  //   timerDebounceRef.current = setTimeout(() => {
+  //     if (nameCity !== city) {
+  //       dispatch(resetPoints([]));
+  //       setCity(target.value);
+  //       setPage(1);
+  //     } else {
+  //       setCity(target.value);
+  //     }
+  //   }, 1000);
+  // };
+  const takeCity = ({ target }) => {
+    const nameCity = target.value.trim();
+    setCity(nameCity);
+    if (nameCity !== city) {
+      dispatch(resetPoints([]));
+      setCity(nameCity);
+      setPage(1);
+    } else {
+      setCity(nameCity);
     }
-
-    timerDebounceRef.current = setTimeout(() => {
-      if (nameCity.trim() !== city) {
-        dispatch(resetPoints([]));
-        setCity(target.value);
-        setPage(1);
-      } else {
-        setCity(target.value);
-      }
-    }, 1000);
   };
 
   const points = useSelector(selectPoints);
-  const isLoading =useSelector(selectIsLoadingPoints)
+  const isLoading = useSelector(selectIsLoadingPoints);
   const dispatch = useDispatch();
-  
 
-  
   useEffect(() => {
     const getInfoCity = city => {
       if (city.trim() === '') {
@@ -59,7 +67,14 @@ export const ListPoints = () => {
         city,
         page,
       };
-      dispatch(fetchAllPoints(data));
+    
+    if (timerDebounceRef.current) {
+      clearTimeout(timerDebounceRef.current);
+    }
+    timerDebounceRef.current = setTimeout(() => {
+     dispatch(fetchAllPoints(data));
+    }, 1000);
+     
     };
     if (city) getInfoCity(city);
   }, [city, dispatch, page]);
@@ -67,8 +82,8 @@ export const ListPoints = () => {
   const onLoadMore = () => {
     setPage(page + 1);
   };
-  const Submit = (e) => {
-   e.preventDefault();
+  const Submit = e => {
+    e.preventDefault();
   };
 
   const clearFieldAndList = () => {
@@ -92,7 +107,7 @@ export const ListPoints = () => {
               autocomplete="off"
               autoFocus
               onChange={takeCity}
-              // value={city}
+              value={city}
             />
           </label>
           {/* <ButtonCity type="submit">
@@ -103,7 +118,7 @@ export const ListPoints = () => {
       <div>
         <Wrap>
           <p>Список відділень у {city ? city : ''} :</p>
-          {isLoading && <Rings  />}
+          {isLoading && <Rings />}
           <ol>
             {points.map(point => (
               <li key={point.SiteKey}> {point.Description}</li>

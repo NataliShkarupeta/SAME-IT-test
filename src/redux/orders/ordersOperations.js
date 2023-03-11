@@ -15,6 +15,7 @@ export const fetchLocationOrder = createAsyncThunk(
         Documents: [
           {
             DocumentNumber: `${num}`,
+            
           },
         ],
       },

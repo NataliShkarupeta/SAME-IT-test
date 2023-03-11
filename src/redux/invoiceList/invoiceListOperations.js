@@ -13,27 +13,25 @@ export const fetchInvoiceList = createAsyncThunk(
       calledMethod: 'getDocumentList',
       methodProperties: {
         DateTimeFrom: '01.01.2022',
-        // DateTimeTo: 'дд.мм.рррр',
         Page: '1',
         GetFullList: '1',
-        // DateTime: 'дд.мм.рррр',
       },
     };
 
     try {
       const response = await fetch(URL, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
+        method: 'POST', 
+        cache: 'no-cache', 
+        credentials: 'same-origin', 
         headers: {
           'Content-Type': 'application/json',
         },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *client
-        body: JSON.stringify(request), // body data type must match "Content-Type" header
+        redirect: 'follow', 
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(request), 
       });
       const data = await response.json();
-      console.log('data ', data.data);
+      // console.log('data ', data.data);
       return data.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -56,15 +54,15 @@ export const deleteOrder = createAsyncThunk(
 
     try {
       const response = await fetch(URL, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
+        method: 'POST', 
+        cache: 'no-cache', 
+        credentials: 'same-origin', 
         headers: {
           'Content-Type': 'application/json'
         },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *client
-        body: JSON.stringify(request), // body data type must match "Content-Type" header
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer', 
+        body: JSON.stringify(request), 
       });
       await response.json();
     //   const data = await response.json();
