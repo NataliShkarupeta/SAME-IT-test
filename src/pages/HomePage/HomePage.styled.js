@@ -7,23 +7,21 @@ export const Wrap = styled.div`
   @media screen and (${p => p.theme.media.medium}) {
     display: flex;
     flex-direction: column;
-    /* padding: ${p => p.theme.space[2]}px; */
   }
-  /* @media screen and (${p => p.theme.media.medium}) { */
-  /* flex-direction: column; */
-  /* padding: ${p => p.theme.space[3]}px; */
-  /* }  */
+ 
 `;
 export const WrapBlock = styled.div`
   margin-top: ${p => p.theme.space[3]}px;
   display: flex;
   gap: 30px;
-   @media screen and (${p => p.theme.media.medium}) {
+  @media screen and (${p => p.theme.media.medium}) {
     flex-direction: column;
     justify-content: center;
     padding: ${p => p.theme.space[3]}px;
-  }  
-  
+  }
+  @media screen and (min-width: 721px) {
+   justify-content: center;
+  }
 `;
 
 // export const Wrap = styled.div``;

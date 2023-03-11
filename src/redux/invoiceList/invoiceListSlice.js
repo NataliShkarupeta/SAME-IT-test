@@ -1,5 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchInvoiceList, deleteOrder } from './invoiceListOperations';
+
+const setError = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
+
+const setPending = state => {
+  state.isLoading = true;
+};
+const extraActions = [fetchInvoiceList, deleteOrder];
+const createActions = type => {
+  return extraActions.map(action => action[type]);
+};
 
 const invoiceListSlice = createSlice({
   name: 'invoiceList',
@@ -36,27 +49,16 @@ const invoiceListSlice = createSlice({
     builder
       .addCase(fetchInvoiceList.fulfilled, (state, { payload }) => {
         state.list.push(...payload);
-      })
-      .addCase(fetchInvoiceList.pending, state => {
-        state.isLoading = true;
-      })
-      .addCase(fetchInvoiceList.rejected, (state, { payload }) => {
-        // console.log(payload);
         state.isLoading = false;
         state.error = payload;
       })
       .addCase(deleteOrder.fulfilled, (state, { payload }) => {
-        // console.log('payload in delete in full', payload);
-        state.list = state.list.filter(item => item.Ref !== payload);
-      })
-      .addCase(deleteOrder.pending, state => {
-        state.isLoading = true;
-      })
-      .addCase(deleteOrder.rejected, (state, { payload }) => {
-        // console.log(payload);
         state.isLoading = false;
+        state.list = state.list.filter(item => item.Ref !== payload);
         state.error = payload;
-      });
+      })
+      .addMatcher(isAnyOf(...createActions('pending')), setPending)
+      .addMatcher(isAnyOf(...createActions('rejected')), setError);
   },
 });
 export default invoiceListSlice.reducer;

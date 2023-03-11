@@ -27,7 +27,7 @@ export const Wrap = styled.nav`
   box-shadow: 0px 1px 20px rgba(90, 9, 100, 0.226972);
  
   @media screen and (min-width: 721px) {
-    width: 200px;
+    width: 120px;
   }
   @media screen and (min-width: 960px) {
     width: 300px;
@@ -35,8 +35,8 @@ export const Wrap = styled.nav`
 `;
 
 export const PositionBlocks = styled.div`
-  
   display: flex;
+
   margin-top: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[4]}px;
 
@@ -46,10 +46,9 @@ export const PositionBlocks = styled.div`
     padding: ${p => p.theme.space[4]}px;
   }
   @media screen and (min-width: 721px) {
-    margin-left: ${p => p.theme.space[0]}px;
+/* justify-content: end */
   }
   @media screen and (min-width: 960px) {
-   margin-left: ${p => p.theme.space[5]}px;
-   
+    margin-left: ${p => p.theme.space[5]}px;
   }
 `;

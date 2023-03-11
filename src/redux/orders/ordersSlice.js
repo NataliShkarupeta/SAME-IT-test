@@ -12,15 +12,15 @@ const pointsSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchLocationOrder.fulfilled, (state, {payload}) => {
-        // console.log('paylo', payload);
+        state.isLoading = false;
         state.order = payload;
-        // console.log('order',state.order);
+        state.error = null;
       })
       .addCase(fetchLocationOrder.pending, state => {
         state.isLoading = true;
       })
       .addCase(fetchLocationOrder.rejected, (state, { payload }) => {
-        // console.log(payload);
+       
         state.isLoading = false;
         state.error = payload;
       });

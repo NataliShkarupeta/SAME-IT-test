@@ -3,14 +3,10 @@ import { useDispatch } from 'react-redux';
 import { fetchLocationOrder } from 'redux/orders/ordersOperations';
 import { useState } from 'react';
 
-
 export const FormRequest = () => {
   const [num, setNut] = useState('');
 
- 
-
   const dispatch = useDispatch();
-
 
   const takeInputValue = ({ target }) => {
     setNut(target.value);
@@ -18,12 +14,12 @@ export const FormRequest = () => {
 
   const getInfo = e => {
     e.preventDefault();
-     if (num.length < 14) {
-       alert(`Введінь номер ТТН коректно-має бути 14 цифр`);
-     } else {
-        dispatch(fetchLocationOrder(num))
-        setNut('');
-    };
+    if (num.length < 14) {
+      alert(`Введінь номер ТТН коректно-має бути 14 цифр`);
+    } else {
+      dispatch(fetchLocationOrder(num));
+      setNut('');
+    }
   };
   return (
     <Form onSubmit={getInfo}>
@@ -37,7 +33,7 @@ export const FormRequest = () => {
           required
         />
       </label>
-      <Button type="submit">Get status TTN</Button>
+      <Button type="submit">Отримати дані</Button>
     </Form>
   );
 };

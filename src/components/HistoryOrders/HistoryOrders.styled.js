@@ -2,22 +2,34 @@ import styled from 'styled-components';
 
  export const Wrap = styled.div`
    width: 40%;
-   height: 300px;
+   height: 300p;
    padding: ${p => p.theme.space[2]}px;
    border: ${p => p.theme.borders.normal};
    background-color: ${p => p.theme.colors.primary};
    border-radius: ${p => p.theme.radii.normal};
    overflow-y: scroll;
    opacity: 0.9;
+   @media screen and (${p => p.theme.media.medium}) {
+     margin: ${p => p.theme.space[0]}px;
+     width: 95%;
+     height: 150px;
+   }
 
-     @media screen and (${p => p.theme.media.medium}) {
-       margin: ${p => p.theme.space[0]}px;
-       width: 100%;
-       height: 170px;
-     
+   /* @media screen and (min-width: 541px) {
+     /*  margin: ${p => p.theme.space[0]}px; 
+     width: 95%;
+     height: 170px;
+   } */
+   @media screen and (min-width: 721px) {
+     /*  margin: ${p => p.theme.space[0]}px; */
+     width: 170px;
+   }
+   @media screen and (min-width: 961px) {
+     width: 40%;
    }
  `;
  export const TakeHistory = styled.p`
+   margin-top: ${p => p.theme.space[0]}px;
    text-decoration: underline;
    font-family: ${p => p.theme.fonts.heading};
    font-size: ${p => p.theme.fontSizes[3]}px;
@@ -49,6 +61,10 @@ import styled from 'styled-components';
      background-color: ${p => p.theme.colors.secondary};
    }
    transition: ${p => p.theme.transitions};
+   @media screen and (${p => p.theme.media.small}) {
+     width: 27px;
+     height: 27px;
+   }
  `;
 
  export const Li = styled.li`

@@ -7,7 +7,7 @@ export const P = styled.p`
   box-shadow: 0px 1px 20px rgba(90, 49, 100, 0.226972);
   padding: ${p => p.theme.space[4]}px;
   font-family: ${p => p.theme.fonts.monospace};
-  /* font-size: ${p => p.theme.fontSizes[6]}px; */
+  line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.heading};
   color: ${p => p.theme.colors.primary};
   border-bottom: ${p => p.theme.borders.normal};
