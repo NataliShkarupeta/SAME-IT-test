@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/SAME-IT-test/static/js/main.a5ee6102.js",
+    "main.js": "/SAME-IT-test/static/js/main.033143af.js",
     "static/media/box.jpg": "/SAME-IT-test/static/media/box.0a5384dc6133066fa5dd.jpg",
     "index.html": "/SAME-IT-test/index.html",
-    "main.a5ee6102.js.map": "/SAME-IT-test/static/js/main.a5ee6102.js.map"
+    "main.033143af.js.map": "/SAME-IT-test/static/js/main.033143af.js.map"
   },
   "entrypoints": [
-    "static/js/main.a5ee6102.js"
+    "static/js/main.033143af.js"
   ]
 }
