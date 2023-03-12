@@ -1,7 +1,10 @@
-body{
+body,p,span{
   margin: 0;
 }
 
+p,span{
+  padding: 0;
+}
 /* @import './vars.css';
 @import './fonts.css';
 
