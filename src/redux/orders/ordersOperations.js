@@ -1,5 +1,7 @@
 // import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const API__KEY = '01fd7ec6f6b3fdecb11b0163020681c2';
 const URL = 'https://api.novaposhta.ua/v2.0/json/';
 // axios.defaults.baseURL = 'https://api.novaposhta.ua/v2.0/json/';
@@ -15,7 +17,6 @@ export const fetchLocationOrder = createAsyncThunk(
         Documents: [
           {
             DocumentNumber: `${num}`,
-            
           },
         ],
       },
@@ -35,7 +36,13 @@ export const fetchLocationOrder = createAsyncThunk(
       });
 
       const data = await response.json();
-      // console.log('data fetch', data);
+      // console.log('data fetch', data.data.length);
+      if (data.data.length === 0) {
+        toast.warning('Замовлення з таким номером не існує', {
+          // position: 'top-center',
+        });
+        return;
+      }
       return data.data[0];
     } catch (error) {
       return rejectWithValue(error.message);

@@ -7,6 +7,7 @@ import { BasicWrap } from './defaultSlyle';
 
 export const App = () => {
   
+
   return (
     <BasicWrap>
       <Routes>

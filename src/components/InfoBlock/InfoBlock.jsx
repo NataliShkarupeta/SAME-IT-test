@@ -7,7 +7,7 @@ import { selectOrdersIsLoading } from 'redux/orders/ordersSelectors';
 export const InfoBlock = () => {
   const order = useSelector(selectOders);
   const isLoading = useSelector(selectOrdersIsLoading);
-  console.log('order=>', order);
+  // console.log('order=>', order);
 
   return (
     <>

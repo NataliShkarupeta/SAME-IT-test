@@ -1,5 +1,6 @@
 // import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast} from 'react-toastify';
 const API__KEY = '01fd7ec6f6b3fdecb11b0163020681c2';
 const URL = 'https://api.novaposhta.ua/v2.0/json/';
 // axios.defaults.baseURL = 'https://api.novaposhta.ua/v2.0/json/';
@@ -32,6 +33,9 @@ export const fetchInvoiceList = createAsyncThunk(
       });
       const data = await response.json();
       // console.log('data ', data.data);
+        if (data.data.length === 0) {
+          toast.warning('В даному в особистому кабінеті ще не створено одного завмовлення!');
+         }
       return data.data;
     } catch (error) {
       return rejectWithValue(error.message);

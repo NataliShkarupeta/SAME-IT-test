@@ -16,6 +16,9 @@ import { resetPoints } from 'redux/points/pointsSlice';
 import { useEffect } from 'react';
 import { selectIsLoadingPoints } from 'redux/points/pointsSelectors';
 import { Rings } from 'react-loader-spinner';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { selectErrorPoints } from 'redux/points/pointsSelectors';
 
 // FaRegSmileWink;
 // FaRegFrown;
@@ -25,23 +28,8 @@ export const ListPoints = () => {
   const [page, setPage] = useState(1);
 
   const timerDebounceRef = useRef();
-  console.log(timerDebounceRef);
-  // const takeCity = ({target}) => {
-  //  const nameCity = target.value.trim();
-  //   if (timerDebounceRef.current) {
-  //     clearTimeout(timerDebounceRef.current);
-  //   }
+  const error = useSelector(selectErrorPoints);
 
-  //   timerDebounceRef.current = setTimeout(() => {
-  //     if (nameCity !== city) {
-  //       dispatch(resetPoints([]));
-  //       setCity(target.value);
-  //       setPage(1);
-  //     } else {
-  //       setCity(target.value);
-  //     }
-  //   }, 1000);
-  // };
   const takeCity = ({ target }) => {
     const nameCity = target.value.trim();
     setCity(nameCity);
@@ -73,11 +61,14 @@ export const ListPoints = () => {
     }
     timerDebounceRef.current = setTimeout(() => {
      dispatch(fetchAllPoints(data));
-    }, 1000);
+      if (error) {
+        toast.error(`Щось пішло не так, спробуйте ще`);
+      }
+    }, 1500);
      
     };
     if (city) getInfoCity(city);
-  }, [city, dispatch, page]);
+  }, [city, dispatch, error, page]);
 
   const onLoadMore = () => {
     setPage(page + 1);
@@ -93,47 +84,54 @@ export const ListPoints = () => {
   };
 
   return (
-    <WrapAll>
-      <Block>
-        <H3>
-          Тут Ви можете завантажити довідник відділень «Нова пошта» у розрізі
-          міст України.
-        </H3>
-        <Form onSubmit={Submit}>
-          <label>
-            <Input
-              placeholder="Введіть назву міста"
-              type="text"
-              autocomplete="off"
-              autoFocus
-              onChange={takeCity}
-              value={city}
-            />
-          </label>
-          {/* <ButtonCity type="submit">
+    <>
+      <ToastContainer
+        transition={Zoom}
+        draggable={false}
+        position="top-center"
+      />
+      <WrapAll>
+        <Block>
+          <H3>
+            Тут Ви можете завантажити довідник відділень «Нова пошта» у розрізі
+            міст України.
+          </H3>
+          <Form onSubmit={Submit}>
+            <label>
+              <Input
+                placeholder="Введіть назву міста"
+                type="text"
+                autocomplete="off"
+                autoFocus
+                onChange={takeCity}
+                value={city}
+              />
+            </label>
+            {/* <ButtonCity type="submit">
             <FaRegArrowAltCircleDown color="white" />
           </ButtonCity> */}
-        </Form>
-      </Block>
-      <div>
-        <Wrap>
-          <p>Список відділень у {city ? city : ''} :</p>
-          {isLoading && <Rings />}
-          <ol>
-            {points.map(point => (
-              <li key={point.SiteKey}> {point.Description}</li>
-            ))}
-          </ol>
-        </Wrap>
-        <WrapButtons>
-          {points.length > 0 && (
-            <>
-              <Button onClick={onLoadMore}>Довантажити</Button>
-              <Button onClick={clearFieldAndList}>Очистити</Button>
-            </>
-          )}
-        </WrapButtons>
-      </div>
-    </WrapAll>
+          </Form>
+        </Block>
+        <div>
+          <Wrap>
+            <p>Список відділень у {city ? city : ''} :</p>
+            {isLoading && <Rings />}
+            <ol>
+              {points.map(point => (
+                <li key={point.SiteKey}> {point.Description}</li>
+              ))}
+            </ol>
+          </Wrap>
+          <WrapButtons>
+            {points.length > 0 && (
+              <>
+                <Button onClick={onLoadMore}>Довантажити</Button>
+                <Button onClick={clearFieldAndList}>Очистити</Button>
+              </>
+            )}
+          </WrapButtons>
+        </div>
+      </WrapAll>
+    </>
   );
 };
