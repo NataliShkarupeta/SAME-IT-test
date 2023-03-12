@@ -35,18 +35,20 @@ export const Wrap = styled.nav`
 `;
 
 export const PositionBlocks = styled.div`
+ 
   display: flex;
 
   margin-top: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[4]}px;
 
   @media screen and (${p => p.theme.media.medium}) {
+
     flex-direction: column;
     margin: ${p => p.theme.space[0]}px;
     padding: ${p => p.theme.space[4]}px;
   }
   @media screen and (min-width: 721px) {
-/* justify-content: end */
+    /* justify-content: end */
   }
   @media screen and (min-width: 960px) {
     margin-left: ${p => p.theme.space[5]}px;

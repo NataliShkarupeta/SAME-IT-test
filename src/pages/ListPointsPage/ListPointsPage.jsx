@@ -25,7 +25,7 @@ export const ListPoints = () => {
   const [page, setPage] = useState(1);
 
   const timerDebounceRef = useRef();
-  
+  console.log(timerDebounceRef);
   // const takeCity = ({target}) => {
   //  const nameCity = target.value.trim();
   //   if (timerDebounceRef.current) {
