@@ -16,6 +16,8 @@ import styled from 'styled-components';
  `;
 
   export const Span = styled.span`
+    padding-top: ${p => p.theme.space[3]}px;
+    justify-content: center;
     color: ${p => p.theme.colors.primary};
     display: flex;
     align-items: center;
