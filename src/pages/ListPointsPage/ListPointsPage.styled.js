@@ -5,7 +5,7 @@ export const WrapButtons = styled.div`
   padding: ${p => p.theme.space[0]}px;
   margin-top: ${p => p.theme.space[2]}px;
   display: flex;
-  justify-content: space-between;
+ justify-content: flex-start;
   gap: 20px;
   
 `;

@@ -3,13 +3,13 @@ import img from '../images/box.jpg';
 
 export const BasicWrap = styled.div`
   box-sizing: border-box;
-  background-image: url('${img}');
+  background: url('${img}');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  height: 100vh;
-  /* height: 100%; */
- 
+  position: absolute;
+  width: 100%;
+  height: 850px;
+  /* max-width: 100vh; */
+  /* max-height: 100%; */
 `;
-
