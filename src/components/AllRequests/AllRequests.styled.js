@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
  export const Ul = styled.ul`
+   border-bottom: 0.1px solid;
+   border-color: ${p => p.theme.colors.text};
    margin-top: ${p => p.theme.space[2]}px;
    margin-bottom: ${p => p.theme.space[2]}px;
    padding: ${p => p.theme.space[3]}px;
@@ -10,7 +12,7 @@ import styled from 'styled-components';
    align-items: center;
    flex-wrap: wrap;
    @media screen and (${p => p.theme.media.medium}) {
-     margin-top: ${p => p.theme.space[4]}px;
+     margin-top: ${p => p.theme.space[1]}px;
    }
    @media screen and (min-width: 721px) {
      margin-top: ${p => p.theme.space[4]}px;
