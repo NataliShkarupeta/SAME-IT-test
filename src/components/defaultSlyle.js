@@ -9,7 +9,7 @@ export const BasicWrap = styled.div`
   background-attachment: fixed;
   position: absolute;
   width: 100%;
-  height: 850px;
+  height: 900px;
   /* max-width: 100vh; */
   /* max-height: 100%; */
 `;
