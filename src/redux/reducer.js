@@ -2,8 +2,9 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import pointsReduser from './points/pointsSlice';
-import ordersReduser from './orders/ordersSlice'
-import invoiceListReduser from './invoiceList/invoiceListSlice'
+import ordersReduser from './orders/ordersSlice';
+import invoiceListReduser from './invoiceList/invoiceListSlice';
+import toggleReduser from './theme/themeSlice';
 
 const persistConfig = {
   key: 'invoiceList',
@@ -12,10 +13,10 @@ const persistConfig = {
 };
 
 export const reducer = combineReducers({
+  globalTheme: toggleReduser,
   points: pointsReduser,
   orders: ordersReduser,
   invoiceList: persistReducer(persistConfig, invoiceListReduser),
- 
 });
 
 // export const reducer = combineReducers({

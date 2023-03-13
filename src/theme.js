@@ -1,5 +1,6 @@
+
+
 export const theme = {
-    
   media: {
     extraLarge: '(max-width: 1140px)',
     large: '(max-width: 960px)',
@@ -78,4 +79,3 @@ export const theme = {
   },
   transitions: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
 };
-

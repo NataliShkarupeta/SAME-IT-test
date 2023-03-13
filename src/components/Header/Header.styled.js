@@ -39,7 +39,19 @@ export const P = styled.div`
 `;
 
 export const Block = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: ${p => p.theme.space[1]}px;
   height: ${p => p.theme.sizes[4]}px;
+`;
+export const LigthDark = styled.div`
+ 
+  
+`;
+export const CheckboxLight = styled.span`
+ 
+
 `;
 
 export const Span = styled.span`

@@ -1,8 +1,11 @@
-body,p,span{
+body,p,span,ul,li{
   margin: 0;
 }
 
-p,span{
+body {
+  height: 100%;
+}
+p,span,ul,li{
   padding: 0;
 }
 /* @import './vars.css';

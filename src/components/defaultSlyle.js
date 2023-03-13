@@ -6,6 +6,10 @@ export const BasicWrap = styled.div`
   background-image: url('${img}');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+
   height: 100vh;
+  /* height: 100%; */
+ 
 `;
 

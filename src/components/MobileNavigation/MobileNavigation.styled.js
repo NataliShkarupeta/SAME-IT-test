@@ -17,6 +17,9 @@ export const MobileLink = styled(NavLink)`
     background-color: ${p => p.theme.colors.accent};
   }
   transition: ${p => p.theme.transitions};
+  @media screen and (${p => p.theme.media.small}) {
+    font-size: 12px;
+  }
 `;
 export const Wrap = styled.nav`
   display: flex;

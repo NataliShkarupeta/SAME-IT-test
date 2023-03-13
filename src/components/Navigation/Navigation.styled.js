@@ -28,27 +28,37 @@ export const Wrap = styled.nav`
  
   @media screen and (min-width: 721px) {
     width: 120px;
+    height: 320px;
   }
   @media screen and (min-width: 960px) {
     width: 300px;
   }
 `;
 
-export const PositionBlocks = styled.div`
- 
+export const WrapForFooter = styled.div`
+height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const WrapForHederAndNav = styled.div`
+  flex: 1 0 auto;
+`;
+
+export const PositionBlocks = styled.section`
+  height: 500px;
   display: flex;
 
   margin-top: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[4]}px;
 
   @media screen and (${p => p.theme.media.medium}) {
-
     flex-direction: column;
     margin: ${p => p.theme.space[0]}px;
     padding: ${p => p.theme.space[4]}px;
   }
   @media screen and (min-width: 721px) {
-    /* justify-content: end */
+    height: 400px;
   }
   @media screen and (min-width: 960px) {
     margin-left: ${p => p.theme.space[5]}px;
