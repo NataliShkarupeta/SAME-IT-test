@@ -22,6 +22,7 @@ export const Navigation = () => {
         <WrapForFooter>
           <WrapForHederAndNav>
             <Header />
+            {globalTheme && <AllRequests />}
             <PositionBlocks>
               <Wrap>
                 <NavigationLink
@@ -38,7 +39,6 @@ export const Navigation = () => {
 
               <Outlet />
             </PositionBlocks>
-            {globalTheme && <AllRequests />}
           </WrapForHederAndNav>
           <FooterBlock />
         </WrapForFooter>

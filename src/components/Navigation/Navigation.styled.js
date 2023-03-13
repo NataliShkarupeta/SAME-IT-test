@@ -36,7 +36,7 @@ export const Wrap = styled.nav`
 `;
 
 export const WrapForFooter = styled.div`
-height: 100vh;
+/* height: 100vh; */
   display: flex;
   flex-direction: column;
 `;

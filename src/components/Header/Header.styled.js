@@ -38,6 +38,7 @@ export const CheckboxWrap = styled.div`
 export const SpanRequests = styled.span`
   font-family: ${p => p.theme.fonts.heading};
   font-weight: ${p => p.theme.fontWeights.body};
+  color: ${p => p.theme.colors.primary};
 `;
 
 export const Span = styled.span`

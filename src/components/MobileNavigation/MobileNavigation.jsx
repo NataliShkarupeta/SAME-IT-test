@@ -20,6 +20,7 @@ export const MobileNavigation = () => {
       <WrapForFooter>
         <WrapForHederAndNav>
           <Header />
+          {globalTheme && <AllRequests />}
           <PositionBlocks>
             <Wrap>
               <MobileLink onClick={() => dispatch(resetPoints([]))} to="/">
@@ -30,7 +31,6 @@ export const MobileNavigation = () => {
             </Wrap>
             <Outlet />
           </PositionBlocks>
-          {globalTheme && <AllRequests />}
         </WrapForHederAndNav>
         <FooterBlock />
       </WrapForFooter>

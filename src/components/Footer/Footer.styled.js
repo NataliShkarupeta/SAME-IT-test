@@ -16,10 +16,11 @@ import styled from 'styled-components';
  `;
 
   export const Span = styled.span`
+    color: ${p => p.theme.colors.primary};
     display: flex;
     align-items: center;
-    font-weight: ${p => p.theme.fontWeights.bold};
-    text-shadow: 1px 0px 8px rgba(238, 238, 238, 0.91);
+    font-weight: ${p => p.theme.fontWeights.body};
+    /* text-shadow: 1px 0px 8px rgba(238, 238, 238, 0.91); */
     @media screen and (${p => p.theme.media.medium}) {
       font-size: 13px;
       flex-direction: column;

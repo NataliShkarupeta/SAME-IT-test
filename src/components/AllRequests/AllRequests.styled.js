@@ -16,7 +16,7 @@ import styled from 'styled-components';
      margin-top: ${p => p.theme.space[4]}px;
    }
    @media screen and (min-width: 961px) {
-     margin-top: ${p => p.theme.space[5]}px;
+     margin-top: ${p => p.theme.space[2]}px;
    }
  `;
 
