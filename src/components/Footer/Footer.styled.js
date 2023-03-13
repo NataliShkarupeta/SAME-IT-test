@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
  export const Footer = styled.footer`
+   margin-top: ${p => p.theme.space[4]}px;
    padding: ${p => p.theme.space[1]}px;
    padding-left: ${p => p.theme.space[3]}px;
    flex: 0 0 auto;
