@@ -13,14 +13,15 @@ export const Wrap = styled.div`
 export const WrapBlock = styled.div`
   margin-top: ${p => p.theme.space[3]}px;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   @media screen and (${p => p.theme.media.medium}) {
     flex-direction: column;
     justify-content: center;
     padding: ${p => p.theme.space[3]}px;
   }
   @media screen and (min-width: 721px) {
-   justify-content: center;
+    justify-content: center;
+    gap: 30;
   }
 `;
 

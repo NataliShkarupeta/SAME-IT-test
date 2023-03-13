@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import pointsReduser from './points/pointsSlice';
 import ordersReduser from './orders/ordersSlice';
 import invoiceListReduser from './invoiceList/invoiceListSlice';
-import toggleReduser from './theme/themeSlice';
+import toggleReduser from './allrequests/allrequestsSlice';
 
 const persistConfig = {
   key: 'invoiceList',

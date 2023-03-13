@@ -5,7 +5,7 @@ import { MobileNavigation } from 'components/MobileNavigation/MobileNavigation';
 import { useMedia } from 'react-use';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetPoints } from 'redux/points/pointsSlice';
-import { selectGlobalTheme } from 'redux/theme/themeSelectors';
+import { selectGlobalTheme } from 'redux/allrequests/allrequestsSelectors';
 import { AllRequests } from 'components/AllRequests/AllRequests';
 import { FooterBlock } from 'components/Footer/Footer';
 import { WrapForFooter, WrapForHederAndNav } from './Navigation.styled';

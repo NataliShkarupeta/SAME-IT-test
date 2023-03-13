@@ -5,16 +5,16 @@ import {
   WrapForFooter,
 } from 'components/Navigation/Navigation.styled';
 import { Header } from 'components/Header/Header';
-import { MobileLink,Wrap } from './MobileNavigation.styled';
+import { MobileLink, Wrap } from './MobileNavigation.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetPoints } from 'redux/points/pointsSlice';
-import { selectGlobalTheme } from 'redux/theme/themeSelectors';
+import { selectGlobalTheme } from 'redux/allrequests/allrequestsSelectors';
 import { AllRequests } from 'components/AllRequests/AllRequests';
 import { FooterBlock } from 'components/Footer/Footer';
 
 export const MobileNavigation = () => {
   const globalTheme = useSelector(selectGlobalTheme);
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   return (
     <>
       <WrapForFooter>
