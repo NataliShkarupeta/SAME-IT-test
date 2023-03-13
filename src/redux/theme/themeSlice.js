@@ -9,7 +9,6 @@ const globalTheme = createSlice({
   },
   reducers: {
     toggleTheme(state) {
-        // console.log('payload', payload);
       state.theme = !state.theme;
     },
   },

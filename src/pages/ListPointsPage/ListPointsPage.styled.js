@@ -25,7 +25,7 @@ export const Wrap = styled.div`
   }
   @media screen and (min-width: 541px) {
     width: 450px;
-    height: 350px;
+    height: 335px;
   }
   @media screen and (min-width: 721px) {
     width: 410px;
@@ -34,11 +34,11 @@ export const Wrap = styled.div`
 
   @media screen and (min-width: 961px) {
     width: 400px;
-    height: 380px;
+    height: 330px;
   }
   @media screen and (min-width: 1141px) {
     width: 440px;
-     height: 500px; 
+     height: 400px; 
   }
 `;
 

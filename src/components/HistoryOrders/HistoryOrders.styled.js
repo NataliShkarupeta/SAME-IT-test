@@ -14,14 +14,7 @@ import styled from 'styled-components';
      width: 95%;
      height: 150px;
    }
-
-   /* @media screen and (min-width: 541px) {
-     /*  margin: ${p => p.theme.space[0]}px; 
-     width: 95%;
-     height: 170px;
-   } */
    @media screen and (min-width: 721px) {
-     /*  margin: ${p => p.theme.space[0]}px; */
      width: 170px;
    }
    @media screen and (min-width: 961px) {
@@ -39,7 +32,6 @@ import styled from 'styled-components';
    :hover,
    :focus {
      color: ${p => p.theme.colors.secondary};
-     /* background-color: ${p => p.theme.colors.secondary}; */
    }
 
    transition: ${p => p.theme.transitions};
@@ -54,7 +46,6 @@ import styled from 'styled-components';
    height: ${p => p.theme.sizes[4]}px;
    background-color: ${p => p.theme.colors.accent};
    border: ${p => p.theme.borders.normal};
-   /* border-radius: ${p => p.theme.radii.round}; */
    border-color: ${p => p.theme.colors.muted};
    :hover,
    :focus {
@@ -71,7 +62,6 @@ import styled from 'styled-components';
    display: flex;
    gap: 25px;
    align-items: center;
-   /* text-decoration: double; */
    font-family: ${p => p.theme.fonts.monospace};
    font-size: ${p => p.theme.fontSizes[3]}px;
    font-weight: ${p => p.theme.bold};

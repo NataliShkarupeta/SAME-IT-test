@@ -7,8 +7,9 @@ import {
   WrapLogoAndImg,
   Span,
   SpanSecond,
-  LigthDark,
-  CheckboxLight,
+  CheckboxWrap,
+  Input,
+  SpanRequests,
 } from './Header.styled';
 import img from '../../images/dove.png';
 import { ImRocket } from 'react-icons/im';
@@ -22,10 +23,10 @@ export const Header = () => {
   return (
     <>
       <Block>
-        <LigthDark>
-          <CheckboxLight id="checkbox__lightt">Всі запити</CheckboxLight>
+        <CheckboxWrap>
+          <SpanRequests id="checkbox__lightt">Всі запити</SpanRequests>
           <label id="switch">
-            <input
+            <Input
               type="checkbox"
               onClick={e => {
                 e.stopPropagation();
@@ -36,7 +37,7 @@ export const Header = () => {
               }}
             />
           </label>
-        </LigthDark>
+        </CheckboxWrap>
       </Block>
       <WrapHeader>
         <WrapLogoAndImg>

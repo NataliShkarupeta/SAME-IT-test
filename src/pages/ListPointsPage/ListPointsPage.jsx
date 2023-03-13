@@ -107,10 +107,15 @@ export const ListPoints = () => {
                 value={city}
               />
             </label>
-            {/* <ButtonCity type="submit">
-            <FaRegArrowAltCircleDown color="white" />
-          </ButtonCity> */}
           </Form>
+          <WrapButtons>
+            {points.length > 0 && (
+              <>
+                <Button onClick={onLoadMore}>Довантажити</Button>
+                <Button onClick={clearFieldAndList}>Очистити</Button>
+              </>
+            )}
+          </WrapButtons>
         </Block>
         <div>
           <Wrap>
@@ -122,14 +127,14 @@ export const ListPoints = () => {
               ))}
             </ol>
           </Wrap>
-          <WrapButtons>
+          {/* <WrapButtons>
             {points.length > 0 && (
               <>
                 <Button onClick={onLoadMore}>Довантажити</Button>
                 <Button onClick={clearFieldAndList}>Очистити</Button>
               </>
             )}
-          </WrapButtons>
+          </WrapButtons> */}
         </div>
       </WrapAll>
     </>

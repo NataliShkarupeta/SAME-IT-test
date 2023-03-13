@@ -1,4 +1,4 @@
-import { Ul, Li } from './AllRequests.styled';
+import { Ul, Li, LiActive } from './AllRequests.styled';
 
 export const AllRequests=()=>{
     return (
@@ -18,9 +18,9 @@ export const AllRequests=()=>{
         <Li>
           <p>Здоровʼє</p>
         </Li>
-        <Li>
+        <LiActive>
           <p>Замовлення</p>
-        </Li>
+        </LiActive>
       </Ul>
     );
 }
