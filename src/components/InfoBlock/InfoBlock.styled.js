@@ -32,6 +32,7 @@ export const SpanP = styled.span`
  `
  export const P = styled.p`
    margin-top: ${p => p.theme.space[0]}px;
+   margin-bottom: ${p => p.theme.space[2]}px;
    font-family: ${p => p.theme.fonts.heading};
 
    font-weight: ${p => p.theme.fontWeights.body};
