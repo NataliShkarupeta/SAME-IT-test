@@ -13,6 +13,9 @@ import styled from 'styled-components';
    @media screen and (${p => p.theme.media.large}) {
      height: ${p => p.theme.sizes[5]}px;
    }
+   @media screen and (min-width: 961px) {
+     margin-top: ${p => p.theme.space[6]}px;
+   }
  `;
 
   export const Span = styled.span`
