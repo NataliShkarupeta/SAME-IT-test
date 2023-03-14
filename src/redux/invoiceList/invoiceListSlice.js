@@ -50,7 +50,7 @@ const invoiceListSlice = createSlice({
       .addCase(fetchInvoiceList.fulfilled, (state, { payload }) => {
         state.list.push(...payload);
         state.isLoading = false;
-        state.error = payload;
+        state.error = null;
       })
       .addCase(deleteOrder.fulfilled, (state, { payload }) => {
         state.isLoading = false;
