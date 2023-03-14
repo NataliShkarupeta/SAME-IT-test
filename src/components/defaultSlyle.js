@@ -15,8 +15,12 @@ export const BasicWrap = styled.div`
   background-attachment: fixed;
   position: absolute;
   width: 100%;
-  /* height: 900px; */
-  height: 100vh;
-  /* max-width: 100vh; */
-  /* max-height: 100%; */
+
+  @media screen and (min-width: 961px) {
+    height: 900px;
+  }
+  @media screen and (min-width: 1120px) {
+    height: 1000px;
+  }
+  
 `;
