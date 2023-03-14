@@ -17,7 +17,7 @@ export const NavigationLink = styled(NavLink)`
 `;
 
 export const Wrap = styled.nav`
-  margin-top: ${p => p.theme.space[4]}px;
+  /* margin-top: ${p => p.theme.space[4]}px; */
   margin-right: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[4]}px;
 
@@ -25,10 +25,16 @@ export const Wrap = styled.nav`
   flex-direction: column;
   gap: 40px;
   box-shadow: 0px 1px 20px rgba(90, 9, 100, 0.226972);
- 
+  @media screen and (${p => p.theme.media.medium}) {
+    flex-direction: column;
+    margin: ${p => p.theme.space[0]}px;
+    margin-top: ${p => p.theme.space[4]}px;
+    padding: ${p => p.theme.space[4]}px;
+  }
+
   @media screen and (min-width: 721px) {
     width: 120px;
-    height: 320px;
+    height: 345px;
   }
   @media screen and (min-width: 960px) {
     width: 300px;

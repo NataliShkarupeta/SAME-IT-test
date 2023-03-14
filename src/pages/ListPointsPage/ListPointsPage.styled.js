@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const WrapButtons = styled.div`
-  margin: ${p => p.theme.space[0]}px;
+  /* margin: ${p => p.theme.space[0]}px; */
   padding: ${p => p.theme.space[0]}px;
-  margin-top: ${p => p.theme.space[2]}px;
+  /* margin-top: ${p => p.theme.space[2]}px; */
   display: flex;
  justify-content: flex-start;
   gap: 20px;
@@ -104,7 +104,7 @@ export const H3 = styled.h3`
 export const Block = styled.div`
   width: 40%;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-direction: column;
   @media screen and (${p => p.theme.media.extraLarge}) {
     width: 95%;
