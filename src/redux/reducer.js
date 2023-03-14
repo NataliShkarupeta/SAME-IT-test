@@ -19,7 +19,4 @@ export const reducer = combineReducers({
   invoiceList: persistReducer(persistConfig, invoiceListReduser),
 });
 
-// export const reducer = combineReducers({
-//   points: pointsReduser,
-//   orders: ordersReduser,
-// });
+
