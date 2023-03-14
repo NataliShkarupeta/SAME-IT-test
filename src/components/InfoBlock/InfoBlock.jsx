@@ -24,11 +24,12 @@ export const InfoBlock = () => {
               {order && order.Status}
             </P>
             <P>
-              <SpanP>Відправлено:</SpanP>{' '}
-              {order && order.WarehouseRecipientAddress}
+              <SpanP>Відправлено:</SpanP>
+              {order && order.WarehouseSenderAddress}
             </P>
             <P>
-              <SpanP>Отримано:</SpanP> {order && order.WarehouseSenderAddress}
+              <SpanP>Отримано:</SpanP>{' '}
+              {order && order.WarehouseRecipientAddress}
             </P>
           </>
         )}
