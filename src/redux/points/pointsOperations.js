@@ -22,9 +22,7 @@ export const fetchAllPoints = createAsyncThunk(
     try {
       const { data } = await axios.post(URL, request);
       if (data.data.length === 0) {
-        toast.warning('Замовлення з таким номером не існує');
-        return;
-      }
+        toast.warning('Ой, таке місто нам не відоме!!!')}
       return data.data;
       // const response = await fetch(URL, {
       //   method: 'POST',
