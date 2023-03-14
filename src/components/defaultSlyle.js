@@ -13,10 +13,8 @@ export const BasicWrap = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
   position: absolute;
   width: 100%;
-  /* height: 900px; */
-  height: 100vh;
-  /* max-width: 100vh; */
-  /* max-height: 100%; */
+  /* height: 100%; */
 `;

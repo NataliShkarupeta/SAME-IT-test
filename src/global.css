@@ -2,7 +2,7 @@ body,p,span,ul,li{
   margin: 0;
 }
 
-body {
+html, body {
   height: 100%;
 }
 p,span,ul,li{
