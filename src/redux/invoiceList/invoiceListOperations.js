@@ -1,9 +1,8 @@
-// import axios from 'axios';
+import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast} from 'react-toastify';
 const API__KEY = '01fd7ec6f6b3fdecb11b0163020681c2';
 const URL = 'https://api.novaposhta.ua/v2.0/json/';
-// axios.defaults.baseURL = 'https://api.novaposhta.ua/v2.0/json/';
 
 export const fetchInvoiceList = createAsyncThunk(
   'invoiceList/fetchAll',
@@ -20,23 +19,30 @@ export const fetchInvoiceList = createAsyncThunk(
     };
 
     try {
-      const response = await fetch(URL, {
-        method: 'POST', 
-        cache: 'no-cache', 
-        credentials: 'same-origin', 
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        redirect: 'follow', 
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify(request), 
-      });
-      const data = await response.json();
-      // console.log('data ', data.data);
-        if (data.data.length === 0) {
-          toast.warning('В даному в особистому кабінеті ще не створено одного завмовлення!');
+         const { data } = await axios.post(URL, request);
+         if (data.data.length === 0) {
+           toast.warning(
+             'В даному в особистому кабінеті ще не створено одного завмовлення!'
+           );
          }
-      return data.data;
+         return data.data;
+      // const response = await fetch(URL, {
+      //   method: 'POST', 
+      //   cache: 'no-cache', 
+      //   credentials: 'same-origin', 
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   redirect: 'follow', 
+      //   referrerPolicy: 'no-referrer',
+      //   body: JSON.stringify(request), 
+      // });
+      // const data = await response.json();
+      // // console.log('data ', data.data);
+      //   if (data.data.length === 0) {
+      //     toast.warning('В даному в особистому кабінеті ще не створено одного завмовлення!');
+      //    }
+      // return data.data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -57,23 +63,25 @@ export const deleteOrder = createAsyncThunk(
     };
 
     try {
-      const response = await fetch(URL, {
-        method: 'POST', 
-        cache: 'no-cache', 
-        credentials: 'same-origin', 
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer', 
-        body: JSON.stringify(request), 
-      });
-      await response.json();
-    //   const data = await response.json();
-    //   if (!data.success) {
-    //     throw new Error(response.status);
-    //   } 
+        await axios.post(URL, request);
         return id;
+    //   const response = await fetch(URL, {
+    //     method: 'POST', 
+    //     cache: 'no-cache', 
+    //     credentials: 'same-origin', 
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     redirect: 'follow',
+    //     referrerPolicy: 'no-referrer', 
+    //     body: JSON.stringify(request), 
+    //   });
+    //   await response.json();
+    // //   const data = await response.json();
+    // //   if (!data.success) {
+    // //     throw new Error(response.status);
+    // //   } 
+    //     return id;
       
     } catch (error) {
       return rejectWithValue(error.message);
