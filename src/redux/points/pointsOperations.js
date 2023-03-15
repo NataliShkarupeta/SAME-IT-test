@@ -22,27 +22,10 @@ export const fetchAllPoints = createAsyncThunk(
     try {
       const { data } = await axios.post(URL, request);
       if (data.data.length === 0) {
-        toast.warning('Ой, таке місто нам не відоме!!!')}
+        toast.warning('Ой, таке місто нам не відоме!!!');
+      }
+
       return data.data;
-      // const response = await fetch(URL, {
-      //   method: 'POST',
-      //   cache: 'no-cache',
-      //   credentials: 'same-origin',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   redirect: 'follow',
-      //   referrerPolicy: 'no-referrer',
-      //   body: JSON.stringify(request),
-      // });
-      // const data = await response.json();
-      // //   console.log('data fetch', data.data);
-      // if (data.data.length === 0) {
-      //   toast.warning('Ой, таке місто нам не відоме!!!', {
-      //     position: 'top-center',
-      //   });
-      // }
-      // return data.data;
     } catch (error) {
       return rejectWithValue(error.message);
     }

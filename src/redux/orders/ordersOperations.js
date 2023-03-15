@@ -23,33 +23,19 @@ export const fetchLocationOrder = createAsyncThunk(
 
     try {
       const { data } = await axios.post(URL, request);
+
       if (data.data.length === 0) {
         toast.warning('Замовлення з таким номером не існує');
         return;
       }
-      return data.data[0];
-      // const response = await fetch(URL, {
-      //   method: 'POST',
-      //   // cache: 'no-cache',
-      //   // credentials: 'same-origin',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   // redirect: 'follow',
-      //   // referrerPolicy: 'no-referrer',
-      //   body: JSON.stringify(request),
-      // });
-
-      // const data = await response.json();
-      // console.log('data fetch', data.data.length);
-      // if (data.data.length === 0) {
-      //   toast.warning('Замовлення з таким номером не існує', {
-      //     // position: 'top-center',
-      //   });
-      //   return;
-      // }
-
-      // return data.data[0];
+      const {Status,WarehouseRecipientAddress,WarehouseSenderAddress,Number} = data.data[0];
+      return {
+        Status,
+        WarehouseRecipientAddress,
+        WarehouseSenderAddress,
+        Number,
+      };
+    
     } catch (error) {
       return rejectWithValue(error.message);
     }

@@ -28,7 +28,7 @@ export const InfoBlock = () => {
               {order && order.WarehouseSenderAddress}
             </P>
             <P>
-              <SpanP>Отримано:</SpanP>{' '}
+              <SpanP>Отримання:</SpanP>{' '}
               {order && order.WarehouseRecipientAddress}
             </P>
           </>

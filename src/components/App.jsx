@@ -3,7 +3,6 @@ import { Navigation } from './Navigation/Navigation';
 import { HomePage } from 'pages/HomePage/HomePage';
 import { ListPoints } from 'pages/ListPointsPage/ListPointsPage';
 import { Helmet } from 'react-helmet';
-// import { BasicWrap } from './defaultSlyle';
 
 export const App = () => {
   return (
