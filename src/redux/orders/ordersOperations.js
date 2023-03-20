@@ -23,7 +23,6 @@ export const fetchLocationOrder = createAsyncThunk(
 
     try {
       const { data } = await axios.post(URL, request);
-
       if (data.data.length === 0) {
         toast.warning('Замовлення з таким номером не існує');
         return;

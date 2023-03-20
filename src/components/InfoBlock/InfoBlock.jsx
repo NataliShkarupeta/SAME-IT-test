@@ -9,11 +9,17 @@ export const InfoBlock = () => {
   const isLoading = useSelector(selectOrdersIsLoading);
   // console.log('order=>', order);
 
+  
   return (
     <>
       <Wrap>
         {isLoading ? (
-          <Rings />
+          <Rings
+            color="purple"
+            wrapperStyle={{
+              justifyContent: 'center',
+            }}
+          />
         ) : (
           <>
             <P>

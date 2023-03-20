@@ -5,9 +5,8 @@ export const WrapButtons = styled.div`
   padding: ${p => p.theme.space[0]}px;
   /* margin-top: ${p => p.theme.space[2]}px; */
   display: flex;
- justify-content: flex-start;
+  justify-content: flex-start;
   gap: 20px;
-  
 `;
 
 export const Wrap = styled.div`
@@ -38,10 +37,9 @@ export const Wrap = styled.div`
   }
   @media screen and (min-width: 1141px) {
     width: 440px;
-     height: 400px; 
+    height: 400px;
   }
 `;
-
 
 export const WrapAll = styled.div`
   display: flex;
@@ -100,7 +98,6 @@ export const H3 = styled.h3`
   }
 `;
 
-
 export const Block = styled.div`
   width: 40%;
   display: flex;
@@ -114,4 +111,8 @@ export const Block = styled.div`
 export const Form = styled.form`
   display: flex;
   gap: 20px;
+`;
+export const SpinnerStyle = styled.div`
+/* position: relative; */
+  
 `;

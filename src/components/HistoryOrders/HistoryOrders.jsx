@@ -50,7 +50,12 @@ export const HistoryOrders = ({ saveNumber }) => {
         </TakeHistory>
         <p>Історія :</p>
         {isLoading ? (
-          <Rings />
+          <Rings
+            color="purple"
+            wrapperStyle={{
+              justifyContent: 'center',
+            }}
+          />
         ) : (
           <Ul>
             {invoiceList.map(({ IntDocNumber, Ref }) => (

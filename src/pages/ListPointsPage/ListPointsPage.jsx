@@ -5,6 +5,7 @@ import {
   Form,
   WrapAll,
   WrapButtons,
+  SpinnerStyle,
 } from './ListPointsPage.styled';
 import { selectPoints } from 'redux/points/pointsSelectors';
 import { useDispatch, useSelector } from 'react-redux';
@@ -82,6 +83,7 @@ export const ListPoints = () => {
     setCity('');
     setPage(1);
   };
+ 
 
   return (
     <>
@@ -120,21 +122,23 @@ export const ListPoints = () => {
         <div>
           <Wrap>
             <p>Список відділень у {city ? city : ''} :</p>
-            {isLoading && <Rings />}
+
             <ol>
               {points.map(point => (
                 <li key={point.SiteKey}> {point.Description}</li>
               ))}
             </ol>
-          </Wrap>
-          {/* <WrapButtons>
-            {points.length > 0 && (
-              <>
-                <Button onClick={onLoadMore}>Довантажити</Button>
-                <Button onClick={clearFieldAndList}>Очистити</Button>
-              </>
+            {isLoading && (
+              <SpinnerStyle>
+                <Rings
+                  color="purple"
+                  wrapperStyle={{
+                   justifyContent: 'center',
+                  }}
+                />
+              </SpinnerStyle>
             )}
-          </WrapButtons> */}
+          </Wrap>
         </div>
       </WrapAll>
     </>
