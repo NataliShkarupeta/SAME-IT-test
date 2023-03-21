@@ -1,26 +1,41 @@
-import { Ul, Li, LiActive } from './AllRequests.styled';
 
-export const AllRequests=()=>{
-    return (
-      <Ul>
-        <Li>
+import { Ul, Li, AllRequestsLink } from './AllRequests.styled';
+
+export const AllRequests = () => {
+  return (
+    <Ul>
+      <Li>
+        <AllRequestsLink to="/weather">
+          {' '}
           <p>Погода</p>
-        </Li>
-        <Li>
+        </AllRequestsLink>
+      </Li>
+      <Li>
+        <AllRequestsLink to="/news">
           <p>Новини</p>
-        </Li>
-        <Li>
+        </AllRequestsLink>
+      </Li>
+      <Li>
+        <AllRequestsLink to="/horoscope">
           <p>Гороскоп</p>
-        </Li>
-        <Li>
+        </AllRequestsLink>
+      </Li>
+      {/* <Li>
+        <AllRequestsLink to='/food'>
           <p>Їжа</p>
-        </Li>
-        <Li>
+        </AllRequestsLink>
+      </Li> */}
+      <Li>
+        <AllRequestsLink to="/health">
+          {' '}
           <p>Здоровʼє</p>
-        </Li>
-        <LiActive>
-          <p>Замовлення</p>
-        </LiActive>
-      </Ul>
-    );
-}
+        </AllRequestsLink>
+      </Li>
+
+      <AllRequestsLink to='/orders'>
+        {' '}
+        <p>Замовлення</p>
+      </AllRequestsLink>
+    </Ul>
+  );
+};

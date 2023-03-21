@@ -11,7 +11,7 @@ import { theme } from './theme';
 import './global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
+  <React.StrictMode>
   <ThemeProvider theme={theme}>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter basename="/SAME-IT-test">
@@ -21,5 +21,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </BrowserRouter>
     </PersistGate>
   </ThemeProvider>
-  // </React.StrictMode>
+ </React.StrictMode>
 );

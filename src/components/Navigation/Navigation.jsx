@@ -9,6 +9,7 @@ import { selectGlobalTheme } from 'redux/allrequests/allrequestsSelectors';
 import { AllRequests } from 'components/AllRequests/AllRequests';
 import { FooterBlock } from 'components/Footer/Footer';
 import { WrapForFooter, WrapForHederAndNav } from './Navigation.styled';
+import { Suspense } from 'react';
 
 export const Navigation = () => {
   const isTablet = useMedia('(max-width: 720px)');
@@ -36,8 +37,9 @@ export const Navigation = () => {
                   Список відділень{' '}
                 </NavigationLink>
               </Wrap>
-
-              <Outlet />
+              <Suspense>
+                <Outlet />
+              </Suspense>
             </PositionBlocks>
           </WrapForHederAndNav>
           <FooterBlock />

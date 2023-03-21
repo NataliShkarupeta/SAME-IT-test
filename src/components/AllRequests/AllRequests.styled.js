@@ -1,6 +1,8 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
  export const Ul = styled.ul`
+   list-style: none;
    border-bottom: 0.1px solid;
    border-color: ${p => p.theme.colors.text};
    margin-top: ${p => p.theme.space[2]}px;
@@ -22,50 +24,46 @@ import styled from 'styled-components';
    }
  `;
 
+
+
   export const Li = styled.li`
+  
+
+  `;
+  export const AllRequestsLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${p => p.theme.colors.primary};
     padding: ${p => p.theme.space[2]}px;
     height: ${p => p.theme.sizes[3]}px;
+    width: ${p => p.theme.sizes[6]}px;
     background-color: ${p => p.theme.colors.accent};
     border: ${p => p.theme.borders.normal};
     border-radius: ${p => p.theme.radii.normal};
     border-color: ${p => p.theme.colors.muted};
-    color: ${p => p.theme.colors.primary};
+    box-shadow: 1px 0px 8px rgba(238, 238, 238, 0.91);
+
     font-family: ${p => p.theme.fonts.monospace};
     line-height: ${p => p.theme.lineHeights.body};
     font-size: ${p => p.theme.fontSizes[2]}px;
     display: flex;
     align-items: center;
+    justify-content: center;
     :hover,
     :focus {
       background-color: ${p => p.theme.colors.secondary};
+      transform: scale(1.2);
     }
     transition: ${p => p.theme.transitions};
     @media screen and (${p => p.theme.media.medium}) {
+      width: ${p => p.theme.sizes[5]}px;
       height: ${p => p.theme.sizes[2]}px;
       font-size: ${p => p.theme.fontSizes[1]}px;
+    }
+    &.active {
+      background-color: ${p => p.theme.colors.accent};
     }
   `;
 
   export const LiActive = styled.li`
-    background-color: ${p => p.theme.colors.secondary};
-    padding: ${p => p.theme.space[2]}px;
-    height: ${p => p.theme.sizes[3]}px;
-    border: ${p => p.theme.borders.normal};
-    border-radius: ${p => p.theme.radii.normal};
-    border-color: ${p => p.theme.colors.muted};
-    color: ${p => p.theme.colors.primary};
-    font-family: ${p => p.theme.fonts.monospace};
-    line-height: ${p => p.theme.lineHeights.body};
-    font-size: ${p => p.theme.fontSizes[2]}px;
-    display: flex;
-    align-items: center;
-    :hover,
-    :focus {
-      background-color: ${p => p.theme.colors.secondary};
-    }
-    transition: ${p => p.theme.transitions};
-    @media screen and (${p => p.theme.media.medium}) {
-      height: ${p => p.theme.sizes[2]}px;
-      font-size: ${p => p.theme.fontSizes[1]}px;
-    }
+  
   `;

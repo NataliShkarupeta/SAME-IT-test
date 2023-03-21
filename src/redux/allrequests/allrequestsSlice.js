@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const globalTheme = createSlice({
   name: 'globalTheme',
   initialState: {
-    theme: false,
+    theme: true,
    
   },
   reducers: {

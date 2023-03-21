@@ -23,8 +23,7 @@ import { selectErrorPoints } from 'redux/points/pointsSelectors';
 
 // FaRegSmileWink;
 // FaRegFrown;
-
-export const ListPoints = () => {
+ const ListPoints = () => {
   const [city, setCity] = useState('');
   const [page, setPage] = useState(1);
 
@@ -144,3 +143,5 @@ export const ListPoints = () => {
     </>
   );
 };
+
+export default ListPoints;

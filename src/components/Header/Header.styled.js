@@ -35,10 +35,10 @@ export const CheckboxWrap = styled.div`
   display: flex;
   align-items: center;
 `;
-export const SpanRequests = styled.span`
+export const SpanRequestsHide = styled.span`
   font-family: ${p => p.theme.fonts.heading};
   font-weight: ${p => p.theme.fontWeights.body};
-  color: ${p => p.theme.colors.primary};
+  color: #dfbde4;
 `;
 
 export const Span = styled.span`

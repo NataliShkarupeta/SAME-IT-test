@@ -9,7 +9,7 @@ import {
   SpanSecond,
   CheckboxWrap,
   Input,
-  SpanRequests,
+  SpanRequestsHide,
 } from './Header.styled';
 import img from '../../images/dove.png';
 import { ImRocket } from 'react-icons/im';
@@ -24,7 +24,7 @@ export const Header = () => {
     <>
       <Block>
         <CheckboxWrap>
-          <SpanRequests id="checkbox__lightt">Всі запити</SpanRequests>
+          <SpanRequestsHide id="checkbox__lightt">Сховати</SpanRequestsHide>
           <label id="switch">
             <Input
               type="checkbox"
@@ -50,7 +50,7 @@ export const Header = () => {
 
         <P>
           {' '}
-          <Span>Зручне отримання інформації по Вашому запиту! </Span>
+          <Span>Зручне отримання інформації по Вашому запиту </Span>
           <SpanSecond>
             {' '}
             Наші запити літають так само швидко як Привид Києва <ImRocket />
